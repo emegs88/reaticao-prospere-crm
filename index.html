@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <title>CRM Reativação — Grupo Prospere by Âncora</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -446,10 +449,10 @@ $("useSample").onclick=async()=>{try{const r=await fetch("./leads.sample.json",{
 (async()=>{
   await store.init();
   const raw=await store.get(KEY);if(raw){try{const p=JSON.parse(raw);STATE.me=p.me||"";STATE.leads=p.leads||{};}catch(e){}}
+  if(Array.isArray(SAMPLE)&&SAMPLE.length){await setBase(SAMPLE,false);return;}
   try{const r=await fetch("./leads.json",{cache:"no-store"});if(r.ok){const b=await r.json();if(Array.isArray(b)&&b.length){await setBase(b,true);return;}}}catch(e){}
   const cached=await store.get(BASEKEY);
   if(cached){try{const b=JSON.parse(cached);if(Array.isArray(b)&&b.length){await setBase(b,false);return;}}catch(e){}}
-  if(Array.isArray(SAMPLE)&&SAMPLE.length){await setBase(SAMPLE,false);return;}
   $("loader").hidden=false;
 })();
 </script>
