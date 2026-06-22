@@ -1,0 +1,9 @@
+# ⚠️ Dados reais de clientes (LGPD) — versionados APENAS porque este repositório é PRIVADO.
+# Se tornar este repositório público, REINSIRA "leads.json" abaixo e remova-o do histórico.
+
+# Sistema / ferramentas
+.DS_Store
+Thumbs.db
+node_modules/
+.vercel
+*.log

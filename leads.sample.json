@@ -1,0 +1,29 @@
+[
+  {
+    "nome": "Cliente Exemplo Um",
+    "tel": "(11) 99999-0001",
+    "wa": "",
+    "uf": "SP",
+    "temp": "ia",
+    "vend": "Vendedor Exemplo",
+    "data": "Jan 1 2026"
+  },
+  {
+    "nome": "Cliente Exemplo Dois",
+    "tel": "(21) 99999-0002",
+    "wa": "",
+    "uf": "RJ",
+    "temp": "nunca",
+    "vend": "Vendedor Exemplo",
+    "data": "Jan 1 2026"
+  },
+  {
+    "nome": "Cliente Exemplo Três",
+    "tel": "(31) 99999-0003",
+    "wa": "",
+    "uf": "MG",
+    "temp": "frio",
+    "vend": "Vendedor Exemplo",
+    "data": "Jan 1 2026"
+  }
+]
