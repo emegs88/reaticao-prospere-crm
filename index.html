@@ -450,9 +450,9 @@ $("useSample").onclick=async()=>{try{const r=await fetch("./leads.sample.json",{
 (async()=>{
   await store.init();
   const raw=await store.get(KEY);if(raw){try{const p=JSON.parse(raw);STATE.me=p.me||"";STATE.leads=p.leads||{};}catch(e){}}
+  try{const r=await fetch("./leads.json",{cache:"no-store"});if(r.ok){const b=await r.json();if(Array.isArray(b)&&b.length){await setBase(b,true);return;}}}catch(e){}
   const cached=await store.get(BASEKEY);
   if(cached){try{const b=JSON.parse(cached);if(Array.isArray(b)&&b.length){await setBase(b,false);return;}}catch(e){}}
-  try{const r=await fetch("./leads.json",{cache:"no-store"});if(r.ok){const b=await r.json();if(Array.isArray(b)&&b.length){await setBase(b,true);return;}}}catch(e){}
   $("loader").hidden=false;
 })();
 </script>
